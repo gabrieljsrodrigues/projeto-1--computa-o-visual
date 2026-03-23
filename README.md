@@ -1,5 +1,10 @@
 # Projeto 1: Processamento Digital de Imagens (PDI) 
-### Disciplina: Computação Visual - Universidade Presbiteriana Mackenzie
+### Disciplina: Computação Visual 
+
+## Integrantes do Grupo
+* **Giulia Araki** - RA: 10408954
+* **Felipe Carvalho** - RA: 10409804
+* **Gabriel Rodrigues** - RA: 10409071
 
 Este projeto consiste em um processador de imagens desenvolvido em linguagem C utilizando a biblioteca **SDL3**. O software é capaz de carregar imagens, convertê-las para escala de cinza, analisar histogramas (brilho e contraste) e realizar a equalização de histograma para melhoria visual.
 
