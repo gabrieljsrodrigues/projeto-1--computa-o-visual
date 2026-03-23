@@ -44,3 +44,43 @@ Certifique-se de ter o **Homebrew** instalado e as bibliotecas necessárias:
 ```bash
 brew install sdl3 sdl3_image sdl3_ttf
 
+---
+
+## Provas de Implementação
+
+Esta seção detalha exatamente onde e como cada requisito obrigatório do projeto foi cumprido no código-fonte `main.c`.
+
+### 1. Requisitos Técnicos e Ambiente
+- **Linguagem (C99+):** O código utiliza o padrão moderno da linguagem C, permitindo declarações de variáveis dentro do escopo de loops `for`.
+  - *Evidência (Linha 28):* `for (int y = 0; y < temp->h; y++)`
+- **Bibliotecas Obrigatórias:** Uso de `SDL3`, `SDL3_image` e `SDL3_ttf`.
+  - *Evidência (Linhas 8-10):* Inclusões de cabeçalho `#include <SDL3/SDL.h>`, etc.
+
+### 2. Carregamento e Tratamento de Erros
+- **Formatos Comuns (PNG, JPG, BMP):** Implementado via `SDL_image`.
+  - *Evidência (Linha 127):* Uso da função `IMG_Load(argv[1])`.
+- **Tratamento de Arquivo Não Encontrado:** O programa verifica a integridade do ponteiro da imagem e encerra de forma segura caso falte o arquivo.
+  - *Evidência (Linhas 128-130):* ```c
+    if (!image) { printf("Erro na imagem!\n"); return 1; }
+    ```
+
+### 3. Análise e Conversão para Escala de Cinza
+- **Fórmula de Luminância ($Y$):** Implementação exata dos pesos solicitados pelo professor.
+  - *Evidência (Linha 34):* `Uint8 gray = (Uint8)(0.2125 * r + 0.7154 * g + 0.0721 * b);`
+- **Base para Operações:** A imagem convertida (`gray`) é a entrada obrigatória para o histograma e a equalização.
+
+### 4. Análise e Exibição do Histograma
+- **Exibição Gráfica:** Desenho proporcional das barras brancas sobre fundo preto.
+  - *Evidência:* Função `drawHistogram` (Linhas 87-93).
+- **Análise Estatística:** Cálculo matemático de Média (Brilho) e Desvio Padrão (Contraste).
+  - *Evidência:* Função `computeHistogram` (Linhas 42-53).
+- **Classificação Automática:** Legendagem dinâmica em amarelo usando a biblioteca `SDL_ttf`.
+  - *Evidência (Linhas 104-105):* Classificações entre "clara/média/escura" e "alto/médio/baixo contraste".
+
+### 5. Equalização do Histograma (Interatividade)
+- **Botão com Primitivas SDL:** Botão desenhado e renderizado nativamente.
+  - *Evidência:* Função `renderButton` (Linhas 95-101) via `SDL_RenderFillRect`.
+- **Estados de Cor do Botão:** Feedback visual completo para o usuário.
+  - *Azul:* Neutro | *Azul Claro:* Hover | *Azul Escuro:* Clicado.
+- **Reversão para Original (Toggle):** O sistema alterna texturas e labels entre "Equalizar" e "Ver Original".
+  - *Evidência (Linhas 147-152):* Uso da flag `isEqualized` para alternar o estado do sistema.
