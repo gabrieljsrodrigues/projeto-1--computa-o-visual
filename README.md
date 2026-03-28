@@ -1,4 +1,4 @@
-# Projeto 1: Processamento Digital de Imagens (PDI) 
+# Projeto 1 (Proj1) – Processamento de imagens
 ### Disciplina: Computação Visual 
 
 ## Integrantes do Grupo
