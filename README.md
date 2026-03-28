@@ -35,6 +35,27 @@ Como o projeto foi desenvolvido em ambiente **macOS**, decidimos disponibilizar 
 - [x] **Interface Interativa:** Botão dinâmico com estados de cor (Hover/Click) e alternância entre original/equalizado.
 - [x] **Exportação:** Tecla `S` para salvar o resultado final como `output_image.png`.
 
+## Requisitos Técnicos e Compilação
+
+* **Linguagem:** C (Padrão C99+).
+* **Compilador:** Compatível com `gcc` 15.1.0.
+* **Qualidade:** Código organizado em estruturas e funções, com gerenciamento rigoroso de memória (`SDL_Destroy`).
+
+## Como Compilar e Executar (macOS)
+### Compilação
+gcc main.c -o programa -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL3 -lSDL3_image -lSDL3_ttf
+
+### Execução (Exemplo)
+./programa test.jpg
+
+### Pré-requisitos
+Certifique-se de ter o **Homebrew** instalado e as bibliotecas necessárias:
+brew install sdl3 sdl3_image sdl3_ttf
+
+### Demonstração da execução em ambiente macOS: compilação via GCC, interface de janelas coordenadas e análise de histograma em tempo real:
+<img width="1047" height="895" alt="Captura de Tela 2026-03-28 às 13 30 16" src="https://github.com/user-attachments/assets/10a21658-b96c-4485-9b1f-4592f1bffe5b" />
+
+
 ---
 
 Abaixo, detalhamos como cada exigência técnica foi implementada no código-fonte:
@@ -77,24 +98,3 @@ Abaixo, detalhamos como cada exigência técnica foi implementada no código-fon
 
 ### Resultado do Processamento: Abaixo, a evidência da geração do arquivo output_image.png na pasta do projeto após pressionar a tecla 'S':
 <img width="474" height="431" alt="Captura de Tela 2026-03-28 às 13 19 20" src="https://github.com/user-attachments/assets/475800bb-c0ff-4d71-9c7a-ed665726c13e" />
-
-
----
-
-## Requisitos Técnicos e Compilação
-
-* **Linguagem:** C (Padrão C99+).
-* **Compilador:** Compatível com `gcc` 15.1.0.
-* **Qualidade:** Código organizado em estruturas e funções, com gerenciamento rigoroso de memória (`SDL_Destroy`).
-
-## Como Compilar e Executar (macOS)
-### Compilação
-gcc main.c -o programa -I/opt/homebrew/include -L/opt/homebrew/lib -lSDL3 -lSDL3_image -lSDL3_ttf
-
-### Execução (Exemplo)
-./programa test.jpg
-
-### Pré-requisitos
-Certifique-se de ter o **Homebrew** instalado e as bibliotecas necessárias:
-```bash
-brew install sdl3 sdl3_image sdl3_ttf
