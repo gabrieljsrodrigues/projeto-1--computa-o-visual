@@ -75,6 +75,9 @@ Abaixo, detalhamos como cada exigência técnica foi implementada no código-fon
 * **Tecla 'S':** Salva o estado atual da janela principal (original cinza ou equalizada) como `output_image.png`, sobrescrevendo arquivos existentes.
 <img width="499" height="43" alt="Captura de Tela 2026-03-23 às 20 01 07" src="https://github.com/user-attachments/assets/a2d80176-3e8f-4164-87e9-78179258b3e3" />
 
+### Resultado do Processamento: Abaixo, a evidência da geração do arquivo output_image.png na pasta do projeto após pressionar a tecla 'S':
+<img width="474" height="431" alt="Captura de Tela 2026-03-28 às 13 19 20" src="https://github.com/user-attachments/assets/475800bb-c0ff-4d71-9c7a-ed665726c13e" />
+
 
 ---
 
